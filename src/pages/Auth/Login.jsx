@@ -10,6 +10,8 @@ const Login = ({ setCurrentPage }) => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState(null);
+  const [needsVerification, setNeedsVerification] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
   const { updateUser } = useContext(UserContext);
   const navigate = useNavigate();
@@ -29,6 +31,8 @@ const Login = ({ setCurrentPage }) => {
     }
 
     setError("");
+    setNeedsVerification(false);
+    setIsSubmitting(true);
 
     //Login API Call
     try {
@@ -45,11 +49,25 @@ const Login = ({ setCurrentPage }) => {
         navigate("/dashboard");
       }
     } catch (error) {
-      if (error.response && error.response.data.message) {
-        setError(error.response.data.message);
-      } else {
-        setError("Something went wrong. Please try again.");
+      const msg = error.response?.data?.message || "Something went wrong. Please try again.";
+      setError(msg);
+      if (msg.toLowerCase().includes("verify your email")) {
+        setNeedsVerification(true);
       }
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
+
+  const handleResendVerification = async () => {
+    setError("");
+    try {
+      await axiosInstance.post(API_PATHS.AUTH.RESEND_VERIFICATION, { email });
+      setError(null);
+      alert("Verification email resent. Please check your inbox.");
+    } catch (error) {
+      const msg = error.response?.data?.message || "Failed to resend verification email. Please try again.";
+      setError(msg);
     }
   };
 
@@ -78,9 +96,20 @@ const Login = ({ setCurrentPage }) => {
         />
 
         {error && <p className="text-red-500 text-xs pb-2.5">{error}</p>}
+        {needsVerification && (
+          <div className="flex items-center gap-2 pb-2">
+            <button
+              type="button"
+              className="text-sm text-primary underline"
+              onClick={handleResendVerification}
+            >
+              Resend verification email
+            </button>
+          </div>
+        )}
 
-        <button type="submit" className="btn-primary">
-          LOGIN
+        <button type="submit" className="btn-primary" disabled={isSubmitting}>
+          {isSubmitting ? "PLEASE WAIT..." : "LOGIN"}
         </button>
 
         <p className="text-[13px] text-slate-800 mt-3">

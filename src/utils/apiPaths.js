@@ -8,6 +8,8 @@ export const API_PATHS = {
     PROFILE: "/api/auth/profile",
     UPLOAD_IMAGE: "/api/auth/upload-image",
     TEMPLATES: "/api/auth/templates",
+    RESEND_VERIFICATION: "/api/auth/resend-verification",
+    VERIFY_EMAIL: "/api/auth/verify-email",
   },
   RESUME: {
     CREATE: "/api/resume",

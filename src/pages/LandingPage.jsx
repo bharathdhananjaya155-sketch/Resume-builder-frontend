@@ -1,6 +1,6 @@
-import React, { useContext, useState } from "react";
+import React, { useContext, useState, useEffect } from "react";
 import HERO_IMG from "../assets/hero-img.png";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useLocation } from "react-router-dom";
 import Login from "./Auth/Login";
 import SignUp from "./Auth/SignUp";
 import Modal from "../components/Modal";
@@ -21,13 +21,40 @@ import {
   Smartphone,
   FileText
 } from "lucide-react";
+import toast from "react-hot-toast";
 
 const LandingPage = () => {
   const { user } = useContext(UserContext);
   const navigate = useNavigate();
+  const location = useLocation();
 
   const [openAuthModal, setOpenAuthModal] = useState(false);
   const [currentPage, setCurrentPage] = useState("login");
+
+  // Show toast for email verification redirect flags
+  useEffect(() => {
+    const params = new URLSearchParams(location.search);
+    const verified = params.get("emailVerified");
+    if (!verified) return;
+
+    const handledKey = "emailVerifiedToastHandled";
+    // Guard against StrictMode double-effect and repeated visits in same session
+    if (sessionStorage.getItem(handledKey) === "true") {
+      if (location.search) navigate(location.pathname, { replace: true });
+      return;
+    }
+
+    const reason = params.get("reason");
+    if (verified === "success") {
+      toast.success("Email verified successfully. You can now log in.");
+    } else if (verified === "failed") {
+      toast.error(reason ? decodeURIComponent(reason) : "Email verification failed. Please request a new link.");
+    }
+
+    sessionStorage.setItem(handledKey, "true");
+    // Clean URL via router so useLocation updates
+    navigate(location.pathname, { replace: true });
+  }, [location.search, navigate]);
 
   const handleCTA = () => {
     if (!user) {
