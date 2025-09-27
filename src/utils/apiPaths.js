@@ -23,4 +23,7 @@ export const API_PATHS = {
     HISTORY: "/api/payment/history",
     ORDER_DETAILS: (orderId) => `/api/payment/order/${orderId}`,
   },
+  EMAIL: {
+    SEND_RESUME: "/api/email/send-resume",
+  },
 };

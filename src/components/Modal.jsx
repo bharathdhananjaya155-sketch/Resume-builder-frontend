@@ -10,6 +10,10 @@ const Modal = ({
   actionBtnIcon = null,
   actionBtnText,
   onActionClick,
+  showSecondaryActionBtn,
+  secondaryActionBtnIcon = null,
+  secondaryActionBtnText,
+  onSecondaryActionClick,
 }) => {
   if (!isOpen) return null;
 
@@ -25,15 +29,27 @@ const Modal = ({
           <div className="flex items-center justify-between p-4 border-b border-gray-200">
             <h3 className="md:text-lg font-medium text-gray-900">{title}</h3>
 
-            {showActionBtn && (
-              <button
-                className="btn-small-light mr-12"
-                onClick={() => onActionClick()}
-              >
-                {actionBtnIcon}
-                {actionBtnText}
-              </button>
-            )}
+            <div className="flex items-center gap-3 mr-12">
+              {showSecondaryActionBtn && (
+                <button
+                  className="btn-small-light"
+                  onClick={() => onSecondaryActionClick()}
+                >
+                  {secondaryActionBtnIcon}
+                  {secondaryActionBtnText}
+                </button>
+              )}
+              
+              {showActionBtn && (
+                <button
+                  className="btn-small-light"
+                  onClick={() => onActionClick()}
+                >
+                  {actionBtnIcon}
+                  {actionBtnText}
+                </button>
+              )}
+            </div>
           </div>
         )}
 

@@ -22,7 +22,7 @@ const ThemeSelector = ({
   resumeData,
   onClose,
 }) => {
-  const { user } = useContext(UserContext);
+  const { user, refreshUser } = useContext(UserContext);
   const resumeRef = useRef(null);
   const [baseWidth, setBaseWidth] = useState(800);
   const [templateRestrictions, setTemplateRestrictions] = useState({
@@ -121,7 +121,7 @@ const ThemeSelector = ({
       toast.success("Payment successful! Welcome to Premium!", { id: "payment" });
       
       // Refresh user profile to update subscription plan
-      await user.refreshUser();
+      await refreshUser();
       
       // Refresh template restrictions
       const response = await axiosInstance.get(API_PATHS.AUTH.TEMPLATES);

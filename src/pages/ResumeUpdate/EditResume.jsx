@@ -7,11 +7,11 @@ import {
   Palette,
   Save,
   Trash2,
+  Mail,
 } from "lucide-react";
 import toast from "react-hot-toast";
 import DashboardLayout from "../../components/layouts/DashboardLayout";
 import TitleInput from "../../components/Inputs/TitleInput";
-import { useReactToPrint } from "react-to-print";
 import axiosInstance from "../../utils/axiosInstance";
 import { API_PATHS } from "../../utils/apiPaths";
 import StepProgress from "../../components/StepProgress";
@@ -27,6 +27,8 @@ import RenderResume from "../../components/ResumeTemplates/RenderResume";
 import { captureElementAsImage, dataURLtoFile, fixTailwindColors } from "../../utils/helper";
 import ThemeSelector from "./ThemeSelector";
 import Modal from "../../components/Modal";
+import EmailPopup from "../../components/EmailPopup";
+import { downloadPDF } from "../../utils/pdfGenerator";
 
 const EditResume = () => {
   const { resumeId } = useParams();
@@ -40,6 +42,8 @@ const EditResume = () => {
   const [openThemeSelector, setOpenThemeSelector] = useState(false);
 
   const [openPreviewModal, setOpenPreviewModal] = useState(false);
+
+  const [openEmailPopup, setOpenEmailPopup] = useState(false);
 
   const [currentPage, setCurrentPage] = useState("profile-info");
   const [progress, setProgress] = useState(0);
@@ -578,7 +582,9 @@ const EditResume = () => {
   };
 
   // download resume
-  const reactToPrintFn = useReactToPrint({ contentRef: resumeDownloadRef });
+  const downloadResume = () => {
+    downloadPDF(resumeDownloadRef.current, resumeData.title);
+  };
 
   // Function to update baseWidth based on the resume container size
   const updateBaseWidth = () => {
@@ -727,7 +733,11 @@ const EditResume = () => {
           showActionBtn
           actionBtnText="Download"
           actionBtnIcon={<Download className="text-[16px]" />}
-          onActionClick={() => reactToPrintFn()}
+          onActionClick={downloadResume}
+          showSecondaryActionBtn
+          secondaryActionBtnText="Send Email"
+          secondaryActionBtnIcon={<Mail className="text-[16px]" />}
+          onSecondaryActionClick={() => setOpenEmailPopup(true)}
         >
           <div ref={resumeDownloadRef} className="w-[98vw] h-[90vh]">
             <RenderResume
@@ -737,6 +747,14 @@ const EditResume = () => {
             />
           </div>
         </Modal>
+
+        <EmailPopup
+          isOpen={openEmailPopup}
+          onClose={() => setOpenEmailPopup(false)}
+          resumeId={resumeId}
+          resumeTitle={resumeData.title}
+          resumePreviewRef={resumeDownloadRef}
+        />
     </DashboardLayout>
   );
 };
