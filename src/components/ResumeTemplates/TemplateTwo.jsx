@@ -1,13 +1,13 @@
 import React, { useEffect, useRef, useState } from "react";
 import {
-  LuMapPinHouse,
-  LuMail,
-  LuPhone,
-  LuRss,
-  LuGithub,
-  LuUser,
-} from "react-icons/lu";
-import { RiLinkedinLine } from "react-icons/ri";
+  Mail,
+  Phone,
+  MapPin,
+  Rss,
+  Github,
+  User,
+  Linkedin,
+} from "lucide-react";
 import ContactInfo from "../ResumeSections/ContactInfo";
 import EducationInfo from "../ResumeSections/EducationInfo";
 import { formatYearMonth } from "../../utils/helper";
@@ -72,7 +72,7 @@ const TemplateTwo = ({ resumeData, colorPalette, containerWidth }) => {
                 className="w-[140px] h-[140px] flex items-center justify-center text-5xl rounded-full"
                 style={{ color: themeColors[4] }}
               >
-                <LuUser />
+                <User />
               </div>
             )}
           </div>
@@ -89,7 +89,7 @@ const TemplateTwo = ({ resumeData, colorPalette, containerWidth }) => {
                   </p>
 
                   <ContactInfo
-                    icon={<LuMapPinHouse />}
+                    icon={<MapPin />}
                     iconBG={themeColors[2]}
                     value={resumeData.contactInfo.location}
                   />
@@ -97,13 +97,13 @@ const TemplateTwo = ({ resumeData, colorPalette, containerWidth }) => {
 
                 <div className="col-span-6 flex flex-col gap-5 mt-2">
                   <ContactInfo
-                    icon={<LuMail />}
+                    icon={<Mail />}
                     iconBG={themeColors[2]}
                     value={resumeData.contactInfo.email}
                   />
 
                   <ContactInfo
-                    icon={<LuPhone />}
+                    icon={<Phone />}
                     iconBG={themeColors[2]}
                     value={resumeData.contactInfo.phone}
                   />
@@ -112,7 +112,7 @@ const TemplateTwo = ({ resumeData, colorPalette, containerWidth }) => {
                 <div className="col-span-6">
                   {resumeData.contactInfo.linkedin && (
                     <ContactInfo
-                      icon={<RiLinkedinLine />}
+                      icon={<Linkedin />}
                       iconBG={themeColors[2]}
                       value={resumeData.contactInfo.linkedin}
                     />
@@ -121,7 +121,7 @@ const TemplateTwo = ({ resumeData, colorPalette, containerWidth }) => {
 
                 <div className="col-span-6">
                   <ContactInfo
-                    icon={<LuRss />}
+                    icon={<Rss />}
                     iconBG={themeColors[2]}
                     value={resumeData.contactInfo.website}
                   />

@@ -1,5 +1,5 @@
 import React from "react";
-import { LuGithub, LuExternalLink } from "react-icons/lu";
+import { Github, ExternalLink } from "lucide-react";
 import ActionLink from "./ActionLink";
 
 const ProjectInfo = ({
@@ -21,9 +21,9 @@ const ProjectInfo = ({
       <p className="text-sm text-gray-700 font-medium mt-1">{description}</p>
 
       <div className="flex items-center gap-3 mt-2">
-        {githubLink && <ActionLink icon={<LuGithub />} link={githubLink} bgColor={bgColor} />}
+        {githubLink && <ActionLink icon={<Github />} link={githubLink} bgColor={bgColor} />}
 
-        {liveDemoUrl && <ActionLink icon={<LuExternalLink />} link={liveDemoUrl} bgColor={bgColor} />}
+        {liveDemoUrl && <ActionLink icon={<ExternalLink />} link={liveDemoUrl} bgColor={bgColor} />}
       </div>
     </div>
 };

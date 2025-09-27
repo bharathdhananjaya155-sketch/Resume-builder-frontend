@@ -21,8 +21,19 @@ const ProfileInfoCard = () => {
           className="w-11 h-11 bg-gray-300 rounded-full mr-3"
         />
         <div>
-          <div className="text-[15px] font-bold leading-3">
-            {user.name || ""}
+          <div className="flex items-center gap-2 mb-1">
+            <div className="text-[15px] font-bold leading-3">
+              {user.name || ""}
+            </div>
+            {user.subscriptionPlan === 'premium' ? (
+              <div className="bg-purple-100 text-purple-800 px-2 py-0.5 rounded-full text-xs font-semibold">
+                Premium
+              </div>
+            ) : (
+              <div className="bg-orange-100 text-orange-800 px-2 py-0.5 rounded-full text-xs font-semibold">
+                Basic
+              </div>
+            )}
           </div>
           <button
             className="text-purple-500 text-sm font-semibold cursor-pointer hover:underline"

@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { FaRegEye, FaRegEyeSlash } from "react-icons/fa6";
+import { Eye, EyeOff } from "lucide-react";
 
 const Input = ({ value, onChange, label, placeholder, type }) => {
   const [showPassword, setShowPassword] = useState(false);
@@ -25,13 +25,13 @@ const Input = ({ value, onChange, label, placeholder, type }) => {
         {type === "password" && (
           <>
             {showPassword ? (
-              <FaRegEye
+              <Eye
                 size={22}
                 className="text-primary cursor-pointer"
                 onClick={() => toggleShowPassword()}
               />
             ) : (
-              <FaRegEyeSlash
+              <EyeOff
                 size={22}
                 className="text-slate-400 cursor-pointer"
                 onClick={() => toggleShowPassword()}

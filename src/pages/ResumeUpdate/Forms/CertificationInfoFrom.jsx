@@ -1,6 +1,6 @@
 import React from "react";
 import Input from "../../../components/Inputs/Input";
-import { LuPlus, LuTrash2 } from "react-icons/lu";
+import { Plus, Trash2 } from "lucide-react";
 
 const CertificationInfoFrom = ({
   certifications,
@@ -43,9 +43,19 @@ const CertificationInfoFrom = ({
                 placeholder="2024"
                 type="text"
                 value={cert.year || ""}
-                onChange={({ target }) =>
-                  updateArrayItem(index, "year", target.value)
-                }
+                maxLength={4}
+                pattern="[0-9]{4}"
+                onChange={({ target }) => {
+                  // Only allow numbers and limit to 4 digits
+                  const value = target.value.replace(/[^0-9]/g, '').slice(0, 4);
+                  updateArrayItem(index, "year", value);
+                }}
+                onKeyPress={(e) => {
+                  // Prevent non-numeric characters
+                  if (!/[0-9]/.test(e.key) && !['Backspace', 'Delete', 'Tab', 'Enter'].includes(e.key)) {
+                    e.preventDefault();
+                  }
+                }}
               />
             </div>
 
@@ -55,7 +65,7 @@ const CertificationInfoFrom = ({
                 className="absolute top-3 right-3 text-sm text-red-600 hover:underline cursor-pointer"
                 onClick={() => removeArrayItem(index)}
               >
-                <LuTrash2 />
+                <Trash2 />
               </button>
             )}
           </div>
@@ -72,7 +82,7 @@ const CertificationInfoFrom = ({
             })
           }
         >
-          <LuPlus /> Add Certification
+          <Plus /> Add Certification
         </button>
       </div>
     </div>

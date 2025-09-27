@@ -1,6 +1,6 @@
 import React from "react";
 import Input from "../../../components/Inputs/Input";
-import { LuPlus, LuTrash2 } from "react-icons/lu";
+import { Plus, Trash2 } from "lucide-react";
 import RatingInput from "../../../components/ResumeSections/RatingInput";
 
 const AdditionalInfoFrom = ({
@@ -54,7 +54,7 @@ const AdditionalInfoFrom = ({
                   className="absolute top-3 right-3 text-sm text-red-600 hover:underline cursor-pointer"
                   onClick={() => removeArrayItem("languages", index)}
                 >
-                  <LuTrash2 />
+                  <Trash2 />
                 </button>
               )}
             </div>
@@ -65,12 +65,10 @@ const AdditionalInfoFrom = ({
             className="self-start flex items-center gap-2 px-4 py-2 rounded bg-purple-100 text-purple-800 text-sm font-medium hover:bg-purple-200 cursor-pointer"
             onClick={() => addArrayItem("languages", { name: "", progress: 0 })}
           >
-            <LuPlus /> Add Language
+            <Plus /> Add Language
           </button>
         </div>
       </div>
-
-      {console.log(interests)}
 
       {/* Interests Section */}
       <div className="mt-8 mb-4">
@@ -95,7 +93,7 @@ const AdditionalInfoFrom = ({
                   className="absolute top-6.5 right-3 text-sm text-red-600 hover:underline cursor-pointer"
                   onClick={() => removeArrayItem("interests", index)}
                 >
-                  <LuTrash2 />
+                  <Trash2 />
                 </button>
               )}
             </div>
@@ -106,7 +104,7 @@ const AdditionalInfoFrom = ({
             className="self-start flex items-center gap-2 px-4 py-2 rounded bg-purple-100 text-purple-800 text-sm font-medium hover:bg-purple-200 cursor-pointer"
             onClick={() => addArrayItem("interests", "")}
           >
-            <LuPlus /> Add Interest
+            <Plus /> Add Interest
           </button>
         </div>
       </div>

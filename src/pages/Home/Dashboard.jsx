@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 import axiosInstance from "../../utils/axiosInstance";
 import { API_PATHS } from "../../utils/apiPaths";
 import DashboardLayout from "../../components/layouts/DashboardLayout";
-import {LuCirclePlus} from 'react-icons/lu'
+import { CirclePlus } from 'lucide-react'
 import moment from 'moment'
 import ResumeSummaryCard from "../../components/Cards/ResumeSummaryCard";
 import CreateResumeForm from "./CreateResumeForm";
@@ -44,7 +44,7 @@ const Dashboard = () => {
           onClick={() => setOpenCreateModal(true)}
         >
           <div className="w-12 h-12 flex items-center justify-center bg-purple-200/60 rounded-2xl">
-            <LuCirclePlus className="text-xl text-purple-500" />
+            <CirclePlus className="text-xl text-purple-500" />
           </div>
 
           <h3 className="font-medium text-gray-800">Add New Resume</h3>

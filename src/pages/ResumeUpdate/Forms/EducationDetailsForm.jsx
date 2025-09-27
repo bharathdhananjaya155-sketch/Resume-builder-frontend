@@ -1,6 +1,6 @@
 import React from "react";
 import Input from "../../../components/Inputs/Input";
-import { LuPlus, LuTrash2 } from "react-icons/lu";
+import { Plus, Trash2 } from "lucide-react";
 
 const EducationDetailsForm = ({
   educationInfo,
@@ -63,7 +63,7 @@ const EducationDetailsForm = ({
                 className="absolute top-3 right-3 text-sm text-red-600 hover:underline cursor-pointer"
                 onClick={() => removeArrayItem(index)}
               >
-                <LuTrash2 />
+                <Trash2 />
               </button>
             )}
           </div>
@@ -81,7 +81,7 @@ const EducationDetailsForm = ({
             })
           }
         >
-          <LuPlus /> Add Education
+          <Plus /> Add Education
         </button>
       </div>
     </div>

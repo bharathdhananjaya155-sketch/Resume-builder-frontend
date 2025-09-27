@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { LuCheck, LuPencil } from "react-icons/lu";
+import { Check, Pencil } from "lucide-react";
 
 const TitleInput = ({ title, setTitle }) => {
   const [showInput, setShowInput] = useState(false);
@@ -16,7 +16,7 @@ const TitleInput = ({ title, setTitle }) => {
           />
 
           <button className="cursor-pointer">
-            <LuCheck
+            <Check
               className="text-[16px] text-purple-600"
               onClick={() => setShowInput((prevState) => !prevState)}
             />
@@ -26,7 +26,7 @@ const TitleInput = ({ title, setTitle }) => {
         <>
           <h2 className="text-sm md:text-[17px] font-semibold">{title}</h2>
           <button className="cursor-pointer">
-            <LuPencil
+            <Pencil
               className="text-sm text-purple-600"
               onClick={() => setShowInput((prevState) => !prevState)}
             />

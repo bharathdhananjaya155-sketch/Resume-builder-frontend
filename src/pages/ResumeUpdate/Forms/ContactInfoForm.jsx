@@ -15,7 +15,13 @@ const ContactInfoForm = ({contactInfo, updateSection}) => {
             placeholder="Short Address"
             type="text"
             value={contactInfo.location || ""}
-            onChange={({ target }) => updateSection("location", target.value)}
+            onChange={({ target }) => {
+              // Allow letters, numbers, spaces, commas, periods, hyphens, and common address characters
+              const addressValue = target.value.replace(/[^a-zA-Z0-9\s,.\-#\/]/g, '');
+              updateSection("location", addressValue);
+            }}
+            maxLength="100"
+            required
           />
         </div>
 
@@ -30,9 +36,15 @@ const ContactInfoForm = ({contactInfo, updateSection}) => {
         <Input
           label="Phone Number"
           placeholder="9876543210"
-          type="text"
+          type="tel"
           value={contactInfo.phone || ""}
-          onChange={({ target }) => updateSection("phone", target.value)}
+          onChange={({ target }) => {
+            // Only allow numbers, spaces, hyphens, parentheses, and plus sign
+            const phoneValue = target.value.replace(/[^0-9\s\-\(\)\+]/g, '');
+            updateSection("phone", phoneValue);
+          }}
+          pattern="[0-9\s\-\(\)\+]*"
+          maxLength="15"
         />
 
         <Input

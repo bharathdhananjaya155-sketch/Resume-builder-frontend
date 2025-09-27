@@ -1,13 +1,13 @@
 import React, { useEffect, useRef, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import {
-  LuArrowLeft,
-  LuCircleAlert,
-  LuDownload,
-  LuPalette,
-  LuSave,
-  LuTrash2,
-} from "react-icons/lu";
+  ArrowLeft,
+  CircleAlert,
+  Download,
+  Palette,
+  Save,
+  Trash2,
+} from "lucide-react";
 import toast from "react-hot-toast";
 import DashboardLayout from "../../components/layouts/DashboardLayout";
 import TitleInput from "../../components/Inputs/TitleInput";
@@ -127,11 +127,12 @@ const EditResume = () => {
         break;
 
       case "contact-info":
-        const { email, phone } = resumeData.contactInfo;
-        if (!email.trim() || !/^\S+@\S+\.\S+$/.test(email))
+        const { email, phone, location } = resumeData.contactInfo;
+        if (!location || !location.trim()) errors.push("Address is required");
+        if (!email || !email.trim() || !/^\S+@\S+\.\S+$/.test(email))
           errors.push("Valid email is required.");
-        if (!phone.trim())
-          errors.push("Valid 10-digit phone number is required");
+        if (!phone || !phone.trim())
+          errors.push("Valid phone number is required");
         break;
 
       case "work-experience":
@@ -618,12 +619,12 @@ const EditResume = () => {
               className="btn-small-light"
               onClick={() => setOpenThemeSelector(true)}
             >
-              <LuPalette className="text-[16px]" />
+              <Palette className="text-[16px]" />
               <span className="hidden md:block">Change Theme</span>
             </button>
 
             <button className="btn-small-light" onClick={handleDeleteResume}>
-              <LuTrash2 className="text-[16px]" />
+              <Trash2 className="text-[16px]" />
               <span className="hidden md:block">Delete</span>
             </button>
 
@@ -631,7 +632,7 @@ const EditResume = () => {
               className="btn-small-light"
               onClick={() => setOpenPreviewModal(true)}
             >
-              <LuDownload className="text-[16px]" />
+              <Download className="text-[16px]" />
               <span className="hidden md:block">Preview & Download</span>
             </button>
           </div>
@@ -646,7 +647,7 @@ const EditResume = () => {
             <div className="mx-5">
               {errorMsg && (
                 <div className="flex items-center gap-2 text-[11px] font-medium text-amber-600 bg-amber-100 px-2 py-0.5 my-1 rounded">
-                  <LuCircleAlert className="text-md" /> {errorMsg}
+                  <CircleAlert className="text-md" /> {errorMsg}
                 </div>
               )}
 
@@ -656,7 +657,7 @@ const EditResume = () => {
                   onClick={goBack}
                   disabled={isLoading}
                 >
-                  <LuArrowLeft className="text-[16px]" />
+                  <ArrowLeft className="text-[16px]" />
                   Back
                 </button>
                 <button
@@ -664,7 +665,7 @@ const EditResume = () => {
                   onClick={uploadResumeImages}
                   disabled={isLoading}
                 >
-                  <LuSave className="text-[16px]" />
+                  <Save className="text-[16px]" />
                   {isLoading ? "Updating..." : "Save & Exit"}
                 </button>
                 <button
@@ -673,14 +674,14 @@ const EditResume = () => {
                   disabled={isLoading}
                 >
                   {currentPage === "additionalInfo" && (
-                    <LuDownload className="text-[16px]" />
+                    <Download className="text-[16px]" />
                   )}
 
                   {currentPage === "additionalInfo"
                     ? "Preview & Download"
                     : "Next"}
                   {currentPage !== "additionalInfo" && (
-                    <LuArrowLeft className="text-[16px] rotate-180" />
+                    <ArrowLeft className="text-[16px] rotate-180" />
                   )}
                 </button>
               </div>
@@ -725,7 +726,7 @@ const EditResume = () => {
           title={resumeData.title}
           showActionBtn
           actionBtnText="Download"
-          actionBtnIcon={<LuDownload className="text-[16px]" />}
+          actionBtnIcon={<Download className="text-[16px]" />}
           onActionClick={() => reactToPrintFn()}
         >
           <div ref={resumeDownloadRef} className="w-[98vw] h-[90vh]">

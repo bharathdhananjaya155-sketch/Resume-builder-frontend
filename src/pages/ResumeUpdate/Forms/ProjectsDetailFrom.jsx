@@ -1,6 +1,6 @@
 import React from "react";
 import Input from "../../../components/Inputs/Input";
-import { LuPlus, LuTrash2 } from "react-icons/lu";
+import { Plus, Trash2 } from "lucide-react";
 
 const ProjectsDetailFrom = ({
   projectInfo,
@@ -74,7 +74,7 @@ const ProjectsDetailFrom = ({
                 className="absolute top-3 right-3 text-sm text-red-600 hover:underline cursor-pointer"
                 onClick={() => removeArrayItem(index)}
               >
-                <LuTrash2 />
+                <Trash2 />
               </button>
             )}
           </div>
@@ -92,7 +92,7 @@ const ProjectsDetailFrom = ({
             })
           }
         >
-          <LuPlus /> Add Project
+          <Plus /> Add Project
         </button>
       </div>
     </div>

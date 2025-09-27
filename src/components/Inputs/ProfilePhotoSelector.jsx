@@ -1,5 +1,5 @@
 import React, { useRef, useState } from 'react'
-import { LuUser, LuUpload, LuTrash } from "react-icons/lu";
+import { User, Upload, Trash } from "lucide-react";
 
 const ProfilePhotoSelector = ({image, setImage, preview, setPreview}) => {
   const inputRef = useRef(null);
@@ -44,14 +44,14 @@ const ProfilePhotoSelector = ({image, setImage, preview, setPreview}) => {
 
       {!image ? (
         <div className="w-20 h-20 flex items-center justify-center bg-purple-50 rounded-full relative cursor-pointer">
-          <LuUser className="text-4xl text-purple-500" />
+          <User className="text-4xl text-purple-500" />
 
           <button
             type="button"
             className="w-8 h-8 flex items-center justify-center bg-linear-to-r from-purple-500/85 to-purple-700 text-white rounded-full absolute -bottom-1 -right-1 cursor-pointer"
             onClick={onChooseFile}
           >
-            <LuUpload />
+            <Upload />
           </button>
         </div>
       ) : (
@@ -66,7 +66,7 @@ const ProfilePhotoSelector = ({image, setImage, preview, setPreview}) => {
             className="w-8 h-8 flex items-center justify-center bg-red-500 text-white rounded-full absolute -bottom-1 -right-1 cursor-pointer"
             onClick={handleRemoveImage}
           >
-            <LuTrash />
+            <Trash />
           </button>
         </div>
       )}

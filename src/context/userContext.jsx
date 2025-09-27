@@ -19,7 +19,7 @@ const UserProvider = ({ children }) => {
 
     const fetchUser = async () => {
       try {
-        const response = await axiosInstance.get(API_PATHS.AUTH.GET_PROFILE);
+        const response = await axiosInstance.get(API_PATHS.AUTH.PROFILE);
         setUser(response.data);
       } catch (error) {
         console.error("User not authenticated", error);
@@ -38,13 +38,24 @@ const UserProvider = ({ children }) => {
     setLoading(false);
   };
 
+  const refreshUser = async () => {
+    try {
+      const response = await axiosInstance.get(API_PATHS.AUTH.PROFILE);
+      setUser(response.data);
+      return response.data;
+    } catch (error) {
+      console.error("Failed to refresh user", error);
+      throw error;
+    }
+  };
+
   const clearUser = () => {
     setUser(null);
     localStorage.removeItem("token");
   };
 
   return (
-    <UserContext.Provider value={{ user, loading, updateUser, clearUser }}>
+    <UserContext.Provider value={{ user, loading, updateUser, clearUser, refreshUser }}>
       {children}
     </UserContext.Provider>
   );
