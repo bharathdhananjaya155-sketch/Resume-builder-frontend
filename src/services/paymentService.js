@@ -48,7 +48,7 @@ class PaymentService {
   async initiatePayment(orderData, userInfo) {
     return new Promise((resolve, reject) => {
       const options = {
-        key: "rzp_test_REO1IR7Mvoyqsi", // Replace with your Razorpay key
+        key: "add_your_razorpay_key", // Replace with your Razorpay key
         amount: orderData.amount,
         currency: orderData.currency,
         name: "Resume Builder Pro",

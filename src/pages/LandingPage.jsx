@@ -254,7 +254,7 @@ const LandingPage = () => {
               <div className="aspect-video rounded-xl overflow-hidden">
                 <iframe
                   className="w-full h-full"
-                  src="https://www.youtube.com/embed/dQw4w9WgXcQ?si=example&rel=0&modestbranding=1&showinfo=0"
+                  src="https://www.youtube.com/embed/HotT3L5Bvko?si=J4Mz6Drh5F7EZvyV&rel=0&modestbranding=1&showinfo=0"
                   title="Resume Builder Product Walkthrough"
                   frameBorder="0"
                   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
