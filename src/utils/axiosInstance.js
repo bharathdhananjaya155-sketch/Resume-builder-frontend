@@ -3,7 +3,7 @@ import { BASE_URL } from "./apiPaths";
 
 const axiosInstance = axios.create({
   baseURL: BASE_URL,
-  timeout: 60000,
+  timeout: 120000,
   headers: {
     Accept: "application/json",
   },
@@ -43,6 +43,7 @@ axiosInstance.interceptors.response.use(
       }
     } else if (error.code === "ECONNABORTED") {
       console.error("Request timeout. Please try again.");
+      toast.error("Server is warming up, please wait 30 seconds and try again.");
     }
     return Promise.reject(error);
   }
