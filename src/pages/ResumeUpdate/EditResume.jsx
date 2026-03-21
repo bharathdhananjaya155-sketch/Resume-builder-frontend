@@ -517,11 +517,11 @@ const EditResume = () => {
       if (profileImageFile) formData.append("profileImage", profileImageFile);
       if (thumbnailFile) formData.append("thumbnail", thumbnailFile);
 
-      const uploadResponse = await axiosInstance.put(
-        API_PATHS.RESUME.UPLOAD_IMAGES(resumeId),
-        formData,
-        { headers: { "Content-Type": "multipart/form-data" } }
-      );
+     const uploadResponse = await axiosInstance.put(
+      API_PATHS.RESUME.UPLOAD_IMAGES(resumeId),
+      formData,  // <-- body
+      { headers: { "Content-Type": "multipart/form-data" } }  // <-- config
+    );
 
       const { thumbnailLink, profilePreviewUrl } = uploadResponse.data;
 
