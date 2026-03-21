@@ -452,7 +452,7 @@ const EditResume = () => {
         API_PATHS.RESUME.GET_BY_ID(resumeId)
       );
 
-      if (response.data && response.data._id) {
+      if (response.data && response.data.id) {
         const resumeInfo = response.data;
         console.log("Fetched resume data:", resumeInfo);
 
