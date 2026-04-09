@@ -62,7 +62,7 @@ const AdditionalInfoFrom = ({
 
           <button
             type="button"
-            className="self-start flex items-center gap-2 px-4 py-2 rounded bg-purple-100 text-purple-800 text-sm font-medium hover:bg-purple-200 cursor-pointer"
+            className="self-start flex items-center gap-2 px-4 py-2 rounded bg-emerald-100 text-emerald-800 text-sm font-medium hover:bg-emerald-200 cursor-pointer"
             onClick={() => addArrayItem("languages", { name: "", progress: 0 })}
           >
             <Plus /> Add Language
@@ -101,7 +101,7 @@ const AdditionalInfoFrom = ({
 
           <button
             type="button"
-            className="self-start flex items-center gap-2 px-4 py-2 rounded bg-purple-100 text-purple-800 text-sm font-medium hover:bg-purple-200 cursor-pointer"
+            className="self-start flex items-center gap-2 px-4 py-2 rounded bg-emerald-100 text-emerald-800 text-sm font-medium hover:bg-emerald-200 cursor-pointer"
             onClick={() => addArrayItem("interests", "")}
           >
             <Plus /> Add Interest

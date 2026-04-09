@@ -96,7 +96,7 @@ const EmailPopup = ({ isOpen, onClose, resumeId, resumeTitle, resumePreviewRef }
         {/* Header */}
         <div className="flex items-center justify-between p-4 border-b border-gray-200">
           <div className="flex items-center gap-2">
-            <Mail className="w-5 h-5 text-purple-600" />
+            <Mail className="w-5 h-5 text-emerald-600" />
             <h3 className="text-lg font-semibold text-gray-900">Send Resume via Email</h3>
           </div>
           <button
@@ -119,7 +119,7 @@ const EmailPopup = ({ isOpen, onClose, resumeId, resumeTitle, resumePreviewRef }
               value={emailData.recipientEmail}
               onChange={(e) => handleInputChange("recipientEmail", e.target.value)}
               placeholder="Enter recipient email address"
-              className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent"
+              className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:border-transparent"
               disabled={isLoading}
             />
           </div>
@@ -134,7 +134,7 @@ const EmailPopup = ({ isOpen, onClose, resumeId, resumeTitle, resumePreviewRef }
               value={emailData.subject}
               onChange={(e) => handleInputChange("subject", e.target.value)}
               placeholder="Email subject"
-              className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent"
+              className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:border-transparent"
               disabled={isLoading}
             />
           </div>
@@ -149,7 +149,7 @@ const EmailPopup = ({ isOpen, onClose, resumeId, resumeTitle, resumePreviewRef }
               onChange={(e) => handleInputChange("message", e.target.value)}
               placeholder="Enter your message"
               rows={4}
-              className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent resize-none"
+              className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:border-transparent resize-none"
               disabled={isLoading}
             />
           </div>
@@ -167,7 +167,7 @@ const EmailPopup = ({ isOpen, onClose, resumeId, resumeTitle, resumePreviewRef }
           <button
             onClick={handleSendEmail}
             disabled={isLoading}
-            className="flex items-center gap-2 px-4 py-2 bg-purple-600 text-white rounded-md hover:bg-purple-700 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
+            className="flex items-center gap-2 px-4 py-2 bg-emerald-600 text-white rounded-md hover:bg-emerald-700 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
           >
             <Send className="w-4 h-4" />
             {isLoading ? "Sending..." : "Send Email"}

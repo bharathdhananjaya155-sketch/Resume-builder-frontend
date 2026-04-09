@@ -26,7 +26,7 @@ const ProfileInfoCard = () => {
               {user.name || ""}
             </div>
             {user.subscriptionPlan === 'premium' ? (
-              <div className="bg-purple-100 text-purple-800 px-2 py-0.5 rounded-full text-xs font-semibold">
+              <div className="bg-emerald-100 text-emerald-800 px-2 py-0.5 rounded-full text-xs font-semibold">
                 Premium
               </div>
             ) : (
@@ -36,7 +36,7 @@ const ProfileInfoCard = () => {
             )}
           </div>
           <button
-            className="text-purple-500 text-sm font-semibold cursor-pointer hover:underline"
+            className="text-emerald-500 text-sm font-semibold cursor-pointer hover:underline"
             onClick={handelLogout}
           >
             Logout

@@ -144,7 +144,7 @@ const ThemeSelector = ({
                 Basic Plan
               </div>
               <button 
-                className="bg-purple-600 hover:bg-purple-700 text-white px-4 py-1 rounded-full text-sm font-semibold transition-colors duration-200"
+                className="bg-emerald-600 hover:bg-emerald-700 text-white px-4 py-1 rounded-full text-sm font-semibold transition-colors duration-200"
                 onClick={handleUpgradeToPremium}
               >
                 Upgrade to Premium ₹999
@@ -152,7 +152,7 @@ const ThemeSelector = ({
             </div>
           )}
           {templateRestrictions.isPremium && (
-            <div className="bg-purple-100 text-purple-800 px-3 py-1 rounded-full text-sm font-semibold">
+            <div className="bg-emerald-100 text-emerald-800 px-3 py-1 rounded-full text-sm font-semibold">
               Premium Plan
             </div>
           )}
@@ -216,8 +216,8 @@ export default ThemeSelector;
 const ColorPalette = ({ colors, isSelected, onSelect }) => {
   return (
     <div
-      className={`h-28 bg-purple-50 flex rounded-lg overflow-hidden border-2 ${
-        isSelected ? "border-purple-500" : "border-none"
+      className={`h-28 bg-emerald-50 flex rounded-lg overflow-hidden border-2 ${
+        isSelected ? "border-emerald-500" : "border-none"
       }`}
     >
       {colors.map((color, index) => (

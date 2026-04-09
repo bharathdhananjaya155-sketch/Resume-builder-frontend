@@ -18,8 +18,8 @@ const TemplateCard = ({
 
   return (
     <div
-      className={`h-auto md:h-[300px] flex flex-col items-center justify-between bg-white rounded-lg border border-gray-200 hover:border-purple-300 overflow-hidden cursor-pointer relative
-        ${isSelected ? "border-purple-500 border-2" : ""}`}
+      className={`h-auto md:h-[300px] flex flex-col items-center justify-between bg-white rounded-lg border border-gray-200 hover:border-emerald-300 overflow-hidden cursor-pointer relative
+        ${isSelected ? "border-emerald-500 border-2" : ""}`}
       onClick={handleClick}
     >
       {thumbnailImg ? (

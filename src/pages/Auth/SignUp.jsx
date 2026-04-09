@@ -152,7 +152,7 @@ const SignUp = ({setCurrentPage}) => {
         </form>
       ) : (
         <div>
-          <div className="bg-purple-50 border border-purple-200 text-purple-800 text-sm p-3 rounded mb-3">
+          <div className="bg-emerald-50 border border-emerald-200 text-emerald-800 text-sm p-3 rounded mb-3">
             {info || "We've sent a verification link to your email. Please verify to log in."}
           </div>
           <button
