@@ -49,11 +49,15 @@ const Login = ({ setCurrentPage }) => {
         navigate("/dashboard");
       }
     } catch (error) {
-      const msg = error.response?.data?.message || "Something went wrong. Please try again.";
-      setError(msg);
-      if (msg.toLowerCase().includes("verify your email")) {
-        setNeedsVerification(true);
-      }
+        if (error.code === 'ECONNABORTED') {
+          setError("Server is warming up, please try again in a moment...");
+          return;
+        }
+        const msg = error.response?.data?.message || "Something went wrong. Please try again.";
+        setError(msg);
+        if (msg.toLowerCase().includes("verify your email")) {
+          setNeedsVerification(true);
+        }
     } finally {
       setIsSubmitting(false);
     }

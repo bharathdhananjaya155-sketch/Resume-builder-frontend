@@ -66,32 +66,32 @@ const LandingPage = () => {
 
   const features = [
     {
-      icon: <Edit3 className="w-8 h-8 text-blue-600" />,
+      icon: <Edit3 className="w-8 h-8 text-emerald-600" />,
       title: "Smart Editor",
       description: "Intuitive drag-and-drop interface with real-time preview and AI-powered suggestions."
     },
     {
-      icon: <Eye className="w-8 h-8 text-purple-600" />,
+      icon: <Eye className="w-8 h-8 text-teal-600" />,
       title: "Live Preview",
       description: "See your changes instantly with our advanced live preview technology."
     },
     {
-      icon: <Download className="w-8 h-8 text-green-600" />,
+      icon: <Download className="w-8 h-8 text-emerald-500" />,
       title: "Export Options",
       description: "Download in multiple formats: PDF, Word, or share with a custom link."
     },
     {
-      icon: <Zap className="w-8 h-8 text-yellow-600" />,
+      icon: <Zap className="w-8 h-8 text-teal-500" />,
       title: "Lightning Fast",
       description: "Build professional resumes in under 5 minutes with our optimized workflow."
     },
     {
-      icon: <Shield className="w-8 h-8 text-red-600" />,
+      icon: <Shield className="w-8 h-8 text-emerald-700" />,
       title: "Secure & Private",
       description: "Your data is encrypted and secure. We never share your information."
     },
     {
-      icon: <Smartphone className="w-8 h-8 text-indigo-600" />,
+      icon: <Smartphone className="w-8 h-8 text-teal-700" />,
       title: "Mobile Friendly",
       description: "Edit and preview your resume on any device, anywhere, anytime."
     }
@@ -131,12 +131,12 @@ const LandingPage = () => {
   return (
     <div className="w-full min-h-full bg-white">
       {/* Header */}
-      <header className="sticky top-0 z-50 bg-white/80 backdrop-blur-md border-b border-gray-100">
+      <header className="sticky top-0 z-50 bg-white/80 backdrop-blur-md border-b border-emerald-50">
         <div className="container mx-auto px-4 py-4">
           <div className="flex justify-between items-center">
             <div className="text-2xl font-bold flex items-center gap-2">
-              <FileText className="w-6 h-6 text-blue-600" />
-              <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
+              <FileText className="w-6 h-6 text-emerald-600" />
+              <span className="bg-gradient-to-r from-emerald-600 to-teal-600 bg-clip-text text-transparent">
                 Resume Builder
               </span>
             </div>
@@ -144,7 +144,7 @@ const LandingPage = () => {
               <ProfileInfoCard />
             ) : (
               <button
-                className="bg-gradient-to-r from-blue-600 to-purple-600 text-white px-6 py-2.5 rounded-full hover:shadow-lg transition-all duration-300 font-medium"
+                className="bg-gradient-to-r from-emerald-600 to-teal-600 text-white px-6 py-2.5 rounded-full hover:shadow-lg transition-all duration-300 font-medium"
                 onClick={() => setOpenAuthModal(true)}
               >
                 Get Started Free
@@ -155,18 +155,18 @@ const LandingPage = () => {
       </header>
 
       {/* Hero Section */}
-      <section className="relative overflow-hidden bg-gradient-to-br from-blue-50 via-white to-purple-50">
+      <section className="relative overflow-hidden bg-gradient-to-br from-emerald-50 via-white to-teal-50">
         <div className="absolute inset-0 bg-grid-pattern opacity-5"></div>
         <div className="container mx-auto px-4 py-20">
           <div className="flex flex-col lg:flex-row items-center gap-12">
             <div className="flex-1 text-center lg:text-left">
-              <div className="inline-flex items-center gap-2 bg-blue-100 text-blue-700 px-4 py-2 rounded-full text-sm font-medium mb-6">
+              <div className="inline-flex items-center gap-2 bg-emerald-100 text-emerald-700 px-4 py-2 rounded-full text-sm font-medium mb-6">
                 <Star className="w-4 h-4" />
                 Trusted by 50,000+ professionals
               </div>
               <h1 className="text-5xl lg:text-7xl font-bold mb-6 leading-tight">
                 Build Your
-                <span className="block bg-gradient-to-r from-blue-600 via-purple-600 to-blue-800 bg-clip-text text-transparent">
+                <span className="block bg-gradient-to-r from-emerald-600 via-teal-600 to-emerald-800 bg-clip-text text-transparent">
                   Dream Resume
                 </span>
                 in Minutes
@@ -177,13 +177,13 @@ const LandingPage = () => {
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
                 <button
-                  className="bg-gradient-to-r from-blue-600 to-purple-600 text-white px-8 py-4 rounded-full hover:shadow-xl transition-all duration-300 font-semibold text-lg flex items-center gap-2 group"
+                  className="bg-gradient-to-r from-emerald-600 to-teal-600 text-white px-8 py-4 rounded-full hover:shadow-xl transition-all duration-300 font-semibold text-lg flex items-center gap-2 group"
                   onClick={handleCTA}
                 >
                   Start Building Now
                   <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
                 </button>
-                <button className="border-2 border-gray-300 text-gray-700 px-8 py-4 rounded-full hover:border-gray-400 transition-colors font-semibold text-lg">
+                <button className="border-2 border-emerald-200 text-emerald-700 px-8 py-4 rounded-full hover:border-emerald-400 transition-colors font-semibold text-lg">
                   View Templates
                 </button>
               </div>
@@ -192,7 +192,7 @@ const LandingPage = () => {
               <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 mt-12">
                 {stats.map((stat, index) => (
                   <div key={index} className="text-center lg:text-left">
-                    <div className="text-2xl font-bold text-gray-900">{stat.number}</div>
+                    <div className="text-2xl font-bold text-emerald-800">{stat.number}</div>
                     <div className="text-sm text-gray-600">{stat.label}</div>
                   </div>
                 ))}
@@ -207,8 +207,8 @@ const LandingPage = () => {
                   className="w-full max-w-lg mx-auto rounded-2xl shadow-2xl"
                 />
               </div>
-              <div className="absolute -top-4 -right-4 w-72 h-72 bg-gradient-to-r from-blue-400 to-purple-400 rounded-full blur-3xl opacity-20"></div>
-              <div className="absolute -bottom-4 -left-4 w-72 h-72 bg-gradient-to-r from-purple-400 to-pink-400 rounded-full blur-3xl opacity-20"></div>
+              <div className="absolute -top-4 -right-4 w-72 h-72 bg-gradient-to-r from-emerald-400 to-teal-400 rounded-full blur-3xl opacity-20"></div>
+              <div className="absolute -bottom-4 -left-4 w-72 h-72 bg-gradient-to-r from-teal-400 to-cyan-400 rounded-full blur-3xl opacity-20"></div>
             </div>
           </div>
         </div>
@@ -220,7 +220,7 @@ const LandingPage = () => {
           <div className="text-center mb-16">
             <h2 className="text-4xl font-bold mb-4">
               Everything You Need to
-              <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent"> Succeed</span>
+              <span className="bg-gradient-to-r from-emerald-600 to-teal-600 bg-clip-text text-transparent"> Succeed</span>
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
               Our powerful features help you create professional resumes that get noticed by employers and ATS systems.
@@ -229,8 +229,8 @@ const LandingPage = () => {
           
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {features.map((feature, index) => (
-              <div key={index} className="group p-8 rounded-2xl border border-gray-100 hover:border-blue-200 hover:shadow-xl transition-all duration-300 bg-white">
-                <div className="mb-6 p-3 bg-gray-50 rounded-xl w-fit group-hover:scale-110 transition-transform">
+              <div key={index} className="group p-8 rounded-2xl border border-gray-100 hover:border-emerald-200 hover:shadow-xl transition-all duration-300 bg-white">
+                <div className="mb-6 p-3 bg-emerald-50 rounded-xl w-fit group-hover:scale-110 transition-transform">
                   {feature.icon}
                 </div>
                 <h3 className="text-xl font-semibold mb-3 text-gray-900">{feature.title}</h3>
@@ -241,34 +241,7 @@ const LandingPage = () => {
         </div>
       </section>
 
-      {/* Product Showcase */}
-      <section className="py-20 bg-gradient-to-br from-gray-50 to-blue-50">
-        <div className="container mx-auto px-4">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold mb-4">See It In Action</h2>
-            <p className="text-xl text-gray-600">Watch how easy it is to create a professional resume</p>
-          </div>
-          
-          <div className="max-w-4xl mx-auto">
-            <div className="bg-white rounded-2xl shadow-2xl p-4 md:p-8">
-              <div className="aspect-video rounded-xl overflow-hidden">
-                <iframe
-                  className="w-full h-full"
-                  src="https://www.youtube.com/embed/HotT3L5Bvko?si=J4Mz6Drh5F7EZvyV&rel=0&modestbranding=1&showinfo=0"
-                  title="Resume Builder Product Walkthrough"
-                  frameBorder="0"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                  allowFullScreen
-                ></iframe>
-              </div>
-              <div className="text-center mt-6">
-                <h3 className="text-xl font-semibold text-gray-800 mb-2">Complete Product Walkthrough</h3>
-                <p className="text-gray-600">See how professionals create stunning resumes in just minutes</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
+
 
       {/* Pricing Section */}
       <section className="py-20 bg-white">
@@ -280,34 +253,34 @@ const LandingPage = () => {
           
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
             {/* Free Plan */}
-            <div className="bg-white border-2 border-gray-200 rounded-2xl p-8 hover:shadow-xl transition-all duration-300">
+            <div className="bg-white border-2 border-emerald-100 rounded-2xl p-8 hover:shadow-xl transition-all duration-300">
               <div className="text-center mb-8">
                 <h3 className="text-2xl font-bold mb-2">Free</h3>
-                <div className="text-4xl font-bold mb-2">₹0</div>
+                <div className="text-4xl font-bold mb-2 text-emerald-700">₹0</div>
                 <p className="text-gray-600">Perfect for getting started</p>
               </div>
               
               <ul className="space-y-4 mb-8">
                 <li className="flex items-center gap-3">
-                  <Check className="w-5 h-5 text-green-500" />
+                  <Check className="w-5 h-5 text-emerald-500" />
                   <span>1 Professional Template</span>
                 </li>
                 <li className="flex items-center gap-3">
-                  <Check className="w-5 h-5 text-green-500" />
+                  <Check className="w-5 h-5 text-emerald-500" />
                   <span>Basic Editing Tools</span>
                 </li>
                 <li className="flex items-center gap-3">
-                  <Check className="w-5 h-5 text-green-500" />
+                  <Check className="w-5 h-5 text-emerald-500" />
                   <span>PDF Download</span>
                 </li>
                 <li className="flex items-center gap-3">
-                  <Check className="w-5 h-5 text-green-500" />
+                  <Check className="w-5 h-5 text-emerald-500" />
                   <span>Email Support</span>
                 </li>
               </ul>
               
               <button 
-                className="w-full bg-gray-100 text-gray-800 py-3 rounded-xl font-semibold hover:bg-gray-200 transition-colors"
+                className="w-full bg-emerald-50 text-emerald-800 py-3 rounded-xl font-semibold hover:bg-emerald-100 transition-colors border border-emerald-200"
                 onClick={handleCTA}
               >
                 Get Started Free
@@ -315,7 +288,7 @@ const LandingPage = () => {
             </div>
 
             {/* Premium Plan */}
-            <div className="bg-gradient-to-br from-blue-600 to-purple-600 text-white rounded-2xl p-8 relative overflow-hidden hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-1">
+            <div className="bg-gradient-to-br from-emerald-600 to-teal-600 text-white rounded-2xl p-8 relative overflow-hidden hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-1">
               <div className="absolute top-4 right-4 bg-yellow-400 text-yellow-900 px-3 py-1 rounded-full text-sm font-semibold">
                 Popular
               </div>
@@ -323,34 +296,34 @@ const LandingPage = () => {
               <div className="text-center mb-8">
                 <h3 className="text-2xl font-bold mb-2">Premium</h3>
                 <div className="text-4xl font-bold mb-2">₹999</div>
-                <p className="text-blue-100">Unlock all features</p>
+                <p className="text-emerald-100">Unlock all features</p>
               </div>
               
               <ul className="space-y-4 mb-8">
                 <li className="flex items-center gap-3">
-                  <Check className="w-5 h-5 text-green-400" />
+                  <Check className="w-5 h-5 text-emerald-300" />
                   <span>All Premium Templates</span>
                 </li>
                 <li className="flex items-center gap-3">
-                  <Check className="w-5 h-5 text-green-400" />
+                  <Check className="w-5 h-5 text-emerald-300" />
                   <span>Advanced Editing Tools</span>
                 </li>
                 <li className="flex items-center gap-3">
-                  <Check className="w-5 h-5 text-green-400" />
+                  <Check className="w-5 h-5 text-emerald-300" />
                   <span>Multiple Export Formats</span>
                 </li>
                 <li className="flex items-center gap-3">
-                  <Check className="w-5 h-5 text-green-400" />
+                  <Check className="w-5 h-5 text-emerald-300" />
                   <span>Priority Support</span>
                 </li>
                 <li className="flex items-center gap-3">
-                  <Check className="w-5 h-5 text-green-400" />
+                  <Check className="w-5 h-5 text-emerald-300" />
                   <span>Custom Branding</span>
                 </li>
               </ul>
               
               <button 
-                className="w-full bg-white text-blue-600 py-3 rounded-xl font-semibold hover:bg-gray-50 transition-colors"
+                className="w-full bg-white text-emerald-700 py-3 rounded-xl font-semibold hover:bg-gray-50 transition-colors"
                 onClick={handleCTA}
               >
                 Upgrade to Premium
@@ -361,7 +334,7 @@ const LandingPage = () => {
       </section>
 
       {/* Testimonials */}
-      <section className="py-20 bg-gradient-to-br from-blue-50 to-purple-50">
+      <section className="py-20 bg-gradient-to-br from-emerald-50 to-teal-50">
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
             <h2 className="text-4xl font-bold mb-4">Loved by Professionals</h2>
@@ -370,7 +343,7 @@ const LandingPage = () => {
           
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {testimonials.map((testimonial, index) => (
-              <div key={index} className="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-shadow">
+              <div key={index} className="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-shadow border border-emerald-50">
                 <div className="flex items-center gap-1 mb-4">
                   {[...Array(testimonial.rating)].map((_, i) => (
                     <Star key={i} className="w-5 h-5 text-yellow-400 fill-current" />
@@ -379,7 +352,7 @@ const LandingPage = () => {
                 <p className="text-gray-600 mb-6 leading-relaxed">"{testimonial.content}"</p>
                 <div>
                   <div className="font-semibold text-gray-900">{testimonial.name}</div>
-                  <div className="text-sm text-gray-500">{testimonial.role} at {testimonial.company}</div>
+                  <div className="text-sm text-emerald-600">{testimonial.role} at {testimonial.company}</div>
                 </div>
               </div>
             ))}
@@ -388,12 +361,12 @@ const LandingPage = () => {
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 bg-gradient-to-r from-blue-600 to-purple-600 text-white">
+      <section className="py-20 bg-gradient-to-r from-emerald-600 to-teal-600 text-white">
         <div className="container mx-auto px-4 text-center">
           <h2 className="text-4xl font-bold mb-4">Ready to Build Your Future?</h2>
           <p className="text-xl mb-8 opacity-90">Join thousands of professionals who've landed their dream jobs</p>
           <button
-            className="bg-white text-blue-600 px-8 py-4 rounded-full font-semibold text-lg hover:shadow-xl transition-all duration-300 inline-flex items-center gap-2 group"
+            className="bg-white text-emerald-700 px-8 py-4 rounded-full font-semibold text-lg hover:shadow-xl transition-all duration-300 inline-flex items-center gap-2 group"
             onClick={handleCTA}
           >
             Start Building Now
@@ -407,7 +380,7 @@ const LandingPage = () => {
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
             <div>
-              <div className="text-2xl font-bold bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent mb-4">
+              <div className="text-2xl font-bold bg-gradient-to-r from-emerald-400 to-teal-400 bg-clip-text text-transparent mb-4">
                 ResumeBuilder
               </div>
               <p className="text-gray-400 mb-4">
