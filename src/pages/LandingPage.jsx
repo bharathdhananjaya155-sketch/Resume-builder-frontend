@@ -6,12 +6,12 @@ import SignUp from "./Auth/SignUp";
 import Modal from "../components/Modal";
 import { UserContext } from "../context/userContext";
 import ProfileInfoCard from "../components/Cards/ProfileInfoCard";
-import { 
-  Edit3, 
-  Download, 
-  Eye, 
-  Star, 
-  Check, 
+import {
+  Edit3,
+  Download,
+  Eye,
+  Star,
+  Check,
   ArrowRight,
   Users,
   TrendingUp,
@@ -172,7 +172,7 @@ const LandingPage = () => {
                 in Minutes
               </h1>
               <p className="text-xl text-gray-600 mb-8 max-w-2xl">
-                Create stunning, professional resumes with our AI-powered builder. 
+                Create stunning, professional resumes with our AI-powered builder.
                 Stand out from the crowd and land your dream job faster.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
@@ -187,7 +187,7 @@ const LandingPage = () => {
                   View Templates
                 </button>
               </div>
-              
+
               {/* Stats */}
               <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 mt-12">
                 {stats.map((stat, index) => (
@@ -198,7 +198,7 @@ const LandingPage = () => {
                 ))}
               </div>
             </div>
-            
+
             <div className="flex-1 relative">
               <div className="relative z-10">
                 <img
@@ -226,7 +226,7 @@ const LandingPage = () => {
               Our powerful features help you create professional resumes that get noticed by employers and ATS systems.
             </p>
           </div>
-          
+
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {features.map((feature, index) => (
               <div key={index} className="group p-8 rounded-2xl border border-gray-100 hover:border-emerald-200 hover:shadow-xl transition-all duration-300 bg-white">
@@ -250,7 +250,7 @@ const LandingPage = () => {
             <h2 className="text-4xl font-bold mb-4">Simple, Transparent Pricing</h2>
             <p className="text-xl text-gray-600">Choose the plan that works best for you</p>
           </div>
-          
+
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
             {/* Free Plan */}
             <div className="bg-white border-2 border-emerald-100 rounded-2xl p-8 hover:shadow-xl transition-all duration-300">
@@ -259,7 +259,7 @@ const LandingPage = () => {
                 <div className="text-4xl font-bold mb-2 text-emerald-700">₹0</div>
                 <p className="text-gray-600">Perfect for getting started</p>
               </div>
-              
+
               <ul className="space-y-4 mb-8">
                 <li className="flex items-center gap-3">
                   <Check className="w-5 h-5 text-emerald-500" />
@@ -278,8 +278,8 @@ const LandingPage = () => {
                   <span>Email Support</span>
                 </li>
               </ul>
-              
-              <button 
+
+              <button
                 className="w-full bg-emerald-50 text-emerald-800 py-3 rounded-xl font-semibold hover:bg-emerald-100 transition-colors border border-emerald-200"
                 onClick={handleCTA}
               >
@@ -292,13 +292,13 @@ const LandingPage = () => {
               <div className="absolute top-4 right-4 bg-yellow-400 text-yellow-900 px-3 py-1 rounded-full text-sm font-semibold">
                 Popular
               </div>
-              
+
               <div className="text-center mb-8">
                 <h3 className="text-2xl font-bold mb-2">Premium</h3>
                 <div className="text-4xl font-bold mb-2">₹999</div>
                 <p className="text-emerald-100">Unlock all features</p>
               </div>
-              
+
               <ul className="space-y-4 mb-8">
                 <li className="flex items-center gap-3">
                   <Check className="w-5 h-5 text-emerald-300" />
@@ -321,8 +321,8 @@ const LandingPage = () => {
                   <span>Custom Branding</span>
                 </li>
               </ul>
-              
-              <button 
+
+              <button
                 className="w-full bg-white text-emerald-700 py-3 rounded-xl font-semibold hover:bg-gray-50 transition-colors"
                 onClick={handleCTA}
               >
@@ -340,7 +340,7 @@ const LandingPage = () => {
             <h2 className="text-4xl font-bold mb-4">Loved by Professionals</h2>
             <p className="text-xl text-gray-600">See what our users have to say</p>
           </div>
-          
+
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {testimonials.map((testimonial, index) => (
               <div key={index} className="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-shadow border border-emerald-50">
@@ -398,7 +398,7 @@ const LandingPage = () => {
                 </div>
               </div>
             </div>
-            
+
             <div>
               <h3 className="font-semibold mb-4">Product</h3>
               <ul className="space-y-2 text-gray-400">
@@ -408,7 +408,7 @@ const LandingPage = () => {
                 <li><a href="#" className="hover:text-white transition-colors">Examples</a></li>
               </ul>
             </div>
-            
+
             <div>
               <h3 className="font-semibold mb-4">Support</h3>
               <ul className="space-y-2 text-gray-400">
@@ -418,7 +418,7 @@ const LandingPage = () => {
                 <li><a href="#" className="hover:text-white transition-colors">Tutorials</a></li>
               </ul>
             </div>
-            
+
             <div>
               <h3 className="font-semibold mb-4">Company</h3>
               <ul className="space-y-2 text-gray-400">
@@ -429,9 +429,9 @@ const LandingPage = () => {
               </ul>
             </div>
           </div>
-          
+
           <div className="border-t border-gray-800 mt-12 pt-8 text-center text-gray-400">
-            <p>&copy; 2024 ResumeBuilder. Made with ❤️ for professionals worldwide.</p>
+            <p>&copy; 2026 ResumeBuilder. Made with ❤️ for professionals worldwide.</p>
           </div>
         </div>
       </footer>
